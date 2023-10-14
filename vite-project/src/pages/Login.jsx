@@ -67,7 +67,7 @@ function Login() {
 
           <div className="bg-light p-4 rounded-5" >
 
-            <div class="d-flex justify-content-center">
+            <div className="d-flex justify-content-center">
               <img src={userIcon} style={{ height: "6rem" }} />
             </div>
 
