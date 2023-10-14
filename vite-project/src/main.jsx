@@ -5,6 +5,6 @@ import './Style.css'
 import Inicio from './pages/Inicio.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-    // <Inicio />
-    <Login/>
+    <Inicio />
+    // <Login/>
 )
