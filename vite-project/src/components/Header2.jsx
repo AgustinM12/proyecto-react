@@ -1,6 +1,37 @@
 import logo from "../assets/logo.png";
+import { useState } from "react";
 
 function Header2() {
+
+    const [selectedRubro, setSelectedRubro] = useState(0);
+
+    const handleSelectChange = async (event) => {
+        const selectedValue = event.target.value;
+        setSelectedRubro(selectedValue);
+
+        try {
+            const response = await fetch('/findPostbyRubro', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ id_rubro: selectedValue }),
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                // Maneja la respuesta si es necesario
+                console.log(data);
+            } else {
+                console.error('Error al realizar la solicitud POST');
+            }
+        } catch (error) {
+            console.error('Error al realizar la solicitud POST', error);
+        }
+    };
+
+
+
     return (
         <header>
             <nav className="navbar navbar-expand-lg navbar-light colorPrincipal">
@@ -33,7 +64,7 @@ function Header2() {
                             </li>
                         </ul>
                         <li className="nav-item dropdown d-flex px-5">
-                            <a className="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button"
+                            {/* <a className="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 Filtros
                             </a>
@@ -41,7 +72,24 @@ function Header2() {
                                 <li className="dropdown-item">Rubro</li>
                                 <li className="dropdown-item">Localidad</li>
                                 <li className="dropdown-item">Edad</li>
-                            </ul>
+                            </ul> */}
+
+                            <select id="selectorRubros" onChange={handleSelectChange}
+                                value={selectedRubro} className="form-select" aria-label="Default select example" required>
+
+                                <option value="" >Filtro Rubros</option>
+                                <option value="1">Salud</option>
+                                <option value="2">Tecnologia/Informatica</option>
+                                <option value="3">Educación</option>
+                                <option value="4">Finanzas</option>
+                                <option value="5">Manufactura</option>
+                                <option value="6">Ventas</option>
+                                <option value="7">Administración</option>
+                                <option value="8">Alimenticio</option>
+                                <option value="9">Construcción</option>
+                                <option value="10">Docente</option>
+                                <option value="11">Otros</option>
+                            </select>
                         </li>
 
                         <form className="d-flex">

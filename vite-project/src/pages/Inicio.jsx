@@ -12,6 +12,7 @@ function Inicio() {
     const [posts, setPosts] = useState([]);
 
 
+
     const fetchUsers = async () => {
 
         try {
@@ -83,7 +84,9 @@ function Inicio() {
                                             <strong className="d-block text-gray-dark">{post.post_title}</strong>
                                             {post.post_content}
                                             <br />
+                                            <span>Rubro: {post.rubro.desc_rubro}</span><br />
                                             <span>Fecha: {post.updatedAt}</span>
+
                                         </p>
                                     </div>
                                 ))}
