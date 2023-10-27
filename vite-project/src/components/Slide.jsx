@@ -8,9 +8,11 @@ const Slide = ({ title, subtitle, listItems }) => {
                     <h1 className="text-center">{title}</h1>
                     <h4 className="text-center">{subtitle}</h4>
                     <ul>
-                        {listItems.map((item, index) => (
-                            <li key={index}>{item}</li>
+
+                        {listItems.map((item, num) => (
+                            <li key={num}>{item}</li>
                         ))}
+
                     </ul>
                 </div>
             </section>
