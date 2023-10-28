@@ -1,8 +1,6 @@
-
-
-const Slide = ({ title, subtitle, listItems }) => {
+const Slide = ({ title, subtitle, listItems, children, active }) => {
     return (
-        <div className="carousel-item px-5 py-2">
+        <div className={`carousel-item ${active} px-5 py-2`}>
             <section>
                 <div>
                     <h1 className="text-center">{title}</h1>
@@ -15,6 +13,8 @@ const Slide = ({ title, subtitle, listItems }) => {
 
                     </ul>
                 </div>
+
+                {children} 
             </section>
         </div>
     );
