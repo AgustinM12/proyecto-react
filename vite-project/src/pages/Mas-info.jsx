@@ -2,7 +2,7 @@ import React from 'react'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
 import Slide from '../components/Slide';
-import {slideData1, slideData2, slideData3} from '../assets/InfoContent';
+import {slideData1, slideData2, slideData3} from '../data/InfoContent';
 
 
 export default function MasInfo() {

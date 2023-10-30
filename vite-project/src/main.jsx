@@ -9,9 +9,9 @@ import Error404 from './pages/error404.jsx'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-    // <Inicio/>
-    // <Login/>
-     <MasInfo/>
-    // <Error404 />
+    <Inicio/>
+    //<Login/>
+    //<MasInfo/> 
+    //<Error404 />
 
 )

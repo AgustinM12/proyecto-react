@@ -52,6 +52,7 @@ export const accordionData1Slide3 = {
         "Los candidatos pueden sentirse inseguros sobre qué documentos o materiales deben llevar consigo, como copias adicionales de su currículum, referencias laborales, certificados académicos, etc.",
     ],
 }
+
 export const accordionData2Slide3 = {
     title: "¿Cómo debo vestirme?",
     orden: "Two",
@@ -59,6 +60,7 @@ export const accordionData2Slide3 = {
         "La elección de la vestimenta adecuada puede generar dudas. Los candidatos pueden preguntarse si deben vestirse de manera formal o más casual, dependiendo del tipo de empresa y el entorno laboral.",
     ],
 }
+
 export const accordionData3Slide3 = {
     title: "¿Qué puedo esperar durante la entrevista?",
     orden: "Tree",
@@ -66,6 +68,7 @@ export const accordionData3Slide3 = {
         "Los candidatos suelen querer saber cómo será la dinámica de la entrevista. Preguntas como cuántas personas estarán presentes, qué tipo de preguntas se harán y cuánto tiempo durará la entrevista son comunes.",
     ],
 }
+
 export const accordionData4Slide3 = {
     title: "¿Qué preguntas me harán?",
     orden: "Four",
@@ -73,6 +76,7 @@ export const accordionData4Slide3 = {
         "Los candidatos suelen preocuparse por las preguntas específicas que se les harán durante la entrevista. Pueden buscar consejos sobre cómo preparar respuestas para preguntas difíciles o sobre su experiencia laboral.",
     ],
 }
+
 export const accordionData5Slide3 = {
     title: "¿Cómo debo hablar de mis debilidades?",
     orden: "Five",
@@ -80,6 +84,7 @@ export const accordionData5Slide3 = {
         "La pregunta sobre las debilidades es una pregunta trampa común. Los candidatos pueden preguntarse cómo abordar este tema sin perjudicar sus posibilidades.",
     ],
 }
+
 export const accordionData6Slide3 = {
     title: "¿Cuál es la estructura de la empresa?",
     orden: "Six",
@@ -87,6 +92,7 @@ export const accordionData6Slide3 = {
         "Los candidatos pueden querer saber más sobre la estructura organizativa de la empresa, incluyendo los equipos, los departamentos y las oportunidades de crecimiento.",
     ],
 }
+
 export const accordionData7Slide3 = {
     title: "¿Qué beneficios ofrece la empresa?",
     orden: "Seven",
@@ -94,6 +100,7 @@ export const accordionData7Slide3 = {
         "Preguntas sobre beneficios como el seguro de salud, vacaciones, bonificaciones y otros incentivos son comunes, ya que los candidatos quieren tener una idea clara de lo que la empresa ofrece.",
     ],
 }
+
 export const accordionData8Slide3 = {
     title: "¿Cuáles son los próximos pasos del proceso de selección?",
     orden: "Eight",
@@ -101,6 +108,7 @@ export const accordionData8Slide3 = {
         "Los candidatos suelen estar interesados en saber cuál es el siguiente paso después de la entrevista, cuándo pueden esperar una respuesta y si habrá más rondas de entrevistas.",
     ],
 }
+
 export const accordionData9Slide3 = {
     title: "¿Qué hace que un candidato sea exitoso en esta posición?",
     orden: "Nine",
@@ -108,6 +116,7 @@ export const accordionData9Slide3 = {
         "Los candidatos pueden querer entender mejor cuáles son las cualidades y habilidades que la empresa valora en un empleado para tener éxito en el puesto.",
     ],
 }
+
 export const accordionData10Slide3 = {
     title: "¿Cuándo podré empezar?",
     orden: "Ten",
@@ -226,5 +235,3 @@ export const slideData3 = {
         />,
     ]
 }
-
-
