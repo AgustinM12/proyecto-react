@@ -5,13 +5,16 @@ import './Style.css'
 import Inicio from './pages/Inicio.jsx'
 import MasInfo from './pages/Mas-info.jsx'
 import Error404 from './pages/error404.jsx'
+import { App } from './App.jsx'
 
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-    <Inicio/>
+   // <Inicio/>
     //<Login/>
     //<MasInfo/> 
     //<Error404 />
+
+    <App/>
 
 )
