@@ -2,7 +2,7 @@
 export default function Footer() {
 
     return (
-            <footer className="text-center colorPrincipal">
+            <footer className="text-center colorPrincipal ">
 
                 <ul className="nav justify-content-center border-bottom pb-3 mb-3">
                     <li className="nav-item"><a href="#" className="nav-link px-2 text-light">Inicio</a></li>
