@@ -7,7 +7,7 @@ export const Post = () => {
 
   const [postData, setPostData] = useState({
     id_user: 1,
-    id_rubro: 5,
+    id_rubro: 10,
     post_title: "",
     post_content: "",
   })
@@ -32,15 +32,15 @@ export const Post = () => {
       });
       if (!respuesta.ok) {
         const { message } = await respuesta.json();
-        // return Swal.fire('Error, al crear el posteo', message, 'error',);
+        return Swal.fire('Error, al crear el posteo', message, 'error',);
       } else {
         console.log("exito");
-        // Swal.fire({
-        //   title: "Post creado correctamente.",
-        //   text: "Espero un momento...",
-        //   icon: "success",
-        //   showConfirmButton: false
-        // });
+        Swal.fire({
+          title: "Post creado correctamente.",
+          text: "Espero un momento...",
+          icon: "success",
+          showConfirmButton: false
+        });
       }
     } catch (error) {
       console.error('Error al enviar la solicitud:', error);
