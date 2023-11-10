@@ -1,22 +1,17 @@
 import Footer from "../components/Footer"
 import Header2 from "../components/Header2"
 import { Selects } from "../components/Selects";
-import { useEffect, useState } from "react";
+import { useForm } from "../hooks/useForms";
 
 export const Register = () => {
+
+  const data = useForm({
+    id_pais: ""
+  })
 
   return (
     <>
       <Header2 />
-
-      <Selects
-        label={"Nacionalidad"}
-        placeholder={"Paises"}
-        position={"id_pais"}
-        itemName={"nombre_pais"}
-        url={'http://localhost:5000/findPaises'}
-
-      />
 
       <main className="p-4 d-flex justify-content-center align-items-center colorFondo">
 
@@ -110,13 +105,13 @@ export const Register = () => {
 
               <div className="carousel-item" id="pagina2">
 
-                <div className="bg-white rounded p-3 row g-4 d-flex align-items-center text-center"
+                <div className="bg-white rounded p-3 row g-4 d-flex align-items-center justify-content-center text-center"
                   style={{ width: "40rem", border: "1px", solid: "#000" }}>
 
                   <h3 className="text-center fw-bold">DATOS PERSONALES</h3>
 
                   { /*ingrese su nombre*/}
-                  <div className="d-flex">
+                  <div className="d-flex justify-content-center">
                     <div className="col-md-6 px-1">
                       <label className="form-label">Ingrese su nombre</label>
                       <input id="nombre" type="text" className="form-control" placeholder="John"
@@ -124,7 +119,7 @@ export const Register = () => {
                       <span className="text-danger fw-bold" id="errorNombre"></span>
                     </div>
                     {/*ingrese su apellido */}
-                    <div className="col-md-6 px-1">
+                    <div className="col-md-6 px-1 ">
                       <label className="form-label">Ingrese su apellido</label>
                       <input id="apellido" type="text" className="form-control" placeholder="Doe"
                         value="Doe" required />
@@ -132,7 +127,7 @@ export const Register = () => {
                     </div>
                   </div>
                   {/*dni*/}
-                  <div className="d-flex">
+                  <div className="d-flex justify-content-center">
                     <div className="col-md-6 px-1">
                       <label className="form-label">Ingrese su DNI</label>
                       <input type="text" className="form-control" id="dni" placeholder="00-000-000"
@@ -148,10 +143,10 @@ export const Register = () => {
                     </div>
                   </div>
 
-                  <div className="d-flex">
+                  <div className="d-flex justify-content-center">
                     <div className="col-md-6 px-1">
                       <label className="form-label">Fecha de nacimiento</label>
-                      <input id="fechaNacimiento" value="2001-12-30" type="date" className="form-control"
+                      <input id="fechaNacimiento" type="date" className="form-control"
                         required />
                     </div>
 
@@ -167,28 +162,34 @@ export const Register = () => {
                     </div>
                   </div>
 
-                  <div className="d-flex">
-                    <div className="col-md-6 px-1">
-                      <label className="form-label">Nacionalidad</label>
-                      {/* <select id="pais" className="form-select" aria-label="Default select example"
-                        required>
-                        <option value="" selected disabled>Paises</option>
-                        <option value="1">Argentina</option>
-                        <option value="2">Bolivia</option>
-                        <option value="3">Brasil</option>
-                        <option value="4">Chile</option>
-                        <option value="5">Colombia</option>
-                        <option value="6">Ecuador</option>
-                        <option value="7">Paraguay</option>
-                        <option value="8">Peru</option>
-                        <option value="9">Uruguay</option>
-                        <option value="10">Venezuela</option>
-                        <option value="11">Otro</option>
-                      </select> */}
-                    </div>
+                  <div className="d-flex justify-content-center">
 
-                    <div className="col-md-6 px-1" id="selectorProvincia"></div>
+
+
+                    <Selects
+                      label={"Nacionalidad"}
+                      placeholder={"Paises"}
+                      position={"id_pais"}
+                      itemName={"nombre_pais"}
+                      url={'http://localhost:5000/findPaises'}
+                      name={"id_pais"}
+                    />
+
+                    {data.form.id_pais.value == "1" && (
+
+                      <Selects
+                        label={"Provincia."}
+                        placeholder={"Provincias."}
+                        position={"id_proincia"}
+                        itemName={"nombre_provincia"}
+                        url={'http://localhost:5000/findProvinces'}
+                        name={"id_provincia"}
+                      />
+                    )}
+
                   </div>
+
+
 
                   <div id="otroPais"></div>
 
@@ -232,80 +233,21 @@ export const Register = () => {
                     <span className="text-danger fw-bold" id="errorTelefono"></span>
                   </div>
 
-                  <div className="col-md-12">
-                    <label className="form-label">Seleccione su departamento</label>
-                    <select id="id_depar" className="form-select" aria-label="Default select example"
-                      required>
-                      <option id="select" value="" selected disabled>Departamentos</option>
-                      <option value="1">Formosa</option>
-                      <option value="2">Pilcomayo</option>
-                      <option value="3">Pilagás</option>
-                      <option value="4">Laishí</option>
-                      <option value="5">Pirané</option>
-                      <option value="6">Patiño</option>
-                      <option value="7">Bermejo</option>
-                      <option value="8">Ramon Lista</option>
-                      <option value="9">Matacos</option>
-                    </select>
-                  </div>
+                  <Selects
+                    label={"Departamento en el que se encuentre."}
+                    placeholder={"Departamentos."}
+                    position={"id_depar"}
+                    itemName={"nombre_depar"}
+                    url={'http://localhost:5000/findDepar'}
+                  />
 
-                  <div className="col-md-12">
-                    <label className="form-label">Seleccione su localidad</label>
-                    <select id="id_local" className="form-select" aria-label="Default select example"
-                      required>
-                      <option id="select" value="" selected disabled>Localidades</option>
-                      <option value="1">Formosa</option>
-                      <option value="2">Colonia Pastoril</option>
-                      <option value="3">Gran Guardia</option>
-                      <option value="4">San Hilario</option>
-                      <option value="5">Mariano Boedo</option>
-                      <option value="6">Villa del Carmen</option>
-                      <option value="7">Clorinda</option>
-                      <option value="8">Laguna Naick Neck</option>
-                      <option value="9">Riacho He He</option>
-                      <option value="10">Monte Lindo</option>
-                      <option value="11">S.F Laishí</option>
-                      <option value="12">Gral. Mansilla</option>
-                      <option value="13">Herradura</option>
-                      <option value="14">Yatai</option>
-                      <option value="15">Misión Tacaagle</option>
-                      <option value="16">Laguna Gallo</option>
-                      <option value="17">Tres Lagunas</option>
-                      <option value="18">El Espinillo</option>
-                      <option value="19">Pirané</option>
-                      <option value="20">El Colorado</option>
-                      <option value="21">Villa Dos Trece</option>
-                      <option value="22">Mayor Villafañe</option>
-                      <option value="23">Palo Santo</option>
-                      <option value="24">Las Lomitas</option>
-                      <option value="25">Comandante Fontana</option>
-                      <option value="26">Villa Gral Guemes</option>
-                      <option value="27">Estanislao del Campo</option>
-                      <option value="28">Pozo del Tigre</option>
-                      <option value="29">Gral. Belgrano</option>
-                      <option value="30">San Martin I</option>
-                      <option value="31">San Martin II</option>
-                      <option value="32">Fortin Lugones</option>
-                      <option value="33">Subt. Perin</option>
-                      <option value="34">Posta Cambio Zalazar</option>
-                      <option value="35">Colonia Sarmiento</option>
-                      <option value="36">Juan G. Bazan</option>
-                      <option value="37">Bartolomé De Las Casas</option>
-                      <option value="38">El Recreo</option>
-                      <option value="39">Fortin Sargento Leyes</option>
-                      <option value="40">Fortin Soledad</option>
-                      <option value="41">Guadalcazar</option>
-                      <option value="42">Lamadrid</option>
-                      <option value="43">La Rinconada</option>
-                      <option value="44">Los Chiriguanos</option>
-                      <option value="45">Pozo de Maza</option>
-                      <option value="46">Pozo del Mortero</option>
-                      <option value="47">Vaca Perdida</option>
-                      <option value="48">Gral. Mosconi</option>
-                      <option value="49">El Potrillo</option>
-                      <option value="50">Ing. Juarez</option>
-                    </select>
-                  </div>
+                  <Selects
+                    label={"Localidad en el que se encuentre."}
+                    placeholder={"Localidades."}
+                    position={"id_local"}
+                    itemName={"nombre_local"}
+                    url={'http://localhost:5000/findLocal'}
+                  />
 
                   <div className="col-md-12">
                     <label className="form-label">Seleccione su rol</label>
