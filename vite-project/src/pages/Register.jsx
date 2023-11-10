@@ -1,20 +1,35 @@
+import Footer from "../components/Footer"
+import Header2 from "../components/Header2"
+import { Selects } from "../components/Selects";
+import { useEffect, useState } from "react";
+
 export const Register = () => {
+
   return (
     <>
+      <Header2 />
+
+      <Selects
+        label={"Nacionalidad"}
+        placeholder={"Paises"}
+        position={"id_pais"}
+        itemName={"nombre_pais"}
+        url={'http://localhost:5000/findPaises'}
+
+      />
 
       <main className="p-4 d-flex justify-content-center align-items-center colorFondo">
+
         <form action="#" id="formRegistro">
-          <div id="carouselExampleDark" className="carousel carousel-dark slide ">
+
+          <div id="carouselExampleDark" className="carousel carousel-dark slide">
 
             <div className="carousel-inner rounded-5 py-3">
 
-
-
               <div className="carousel-item active" id="pagina1">
 
-
                 <div className="bg-light rounded p-3 row g-4 d-flex align-items-center text-center"
-                  style="width:40rem; border:1px solid #000;">
+                  style={{ width: "40rem", border: "1px", solid: "#000" }}>
 
                   {/*PAGINA 1*/}
 
@@ -96,7 +111,7 @@ export const Register = () => {
               <div className="carousel-item" id="pagina2">
 
                 <div className="bg-white rounded p-3 row g-4 d-flex align-items-center text-center"
-                  style="width:40rem; border:1px solid #000;">
+                  style={{ width: "40rem", border: "1px", solid: "#000" }}>
 
                   <h3 className="text-center fw-bold">DATOS PERSONALES</h3>
 
@@ -155,7 +170,7 @@ export const Register = () => {
                   <div className="d-flex">
                     <div className="col-md-6 px-1">
                       <label className="form-label">Nacionalidad</label>
-                      <select id="pais" className="form-select" aria-label="Default select example"
+                      {/* <select id="pais" className="form-select" aria-label="Default select example"
                         required>
                         <option value="" selected disabled>Paises</option>
                         <option value="1">Argentina</option>
@@ -169,7 +184,7 @@ export const Register = () => {
                         <option value="9">Uruguay</option>
                         <option value="10">Venezuela</option>
                         <option value="11">Otro</option>
-                      </select>
+                      </select> */}
                     </div>
 
                     <div className="col-md-6 px-1" id="selectorProvincia"></div>
@@ -196,7 +211,7 @@ export const Register = () => {
 
 
                 <div className="bg-white rounded row g-4 p-3 d-flex align-items-center text-center"
-                  style="width:40rem; border:1px solid #000;">
+                  style={{ width: "40rem", border: "1px", solid: "#000" }}>
 
                   <h3 className="text-center fw-bold">INFORMACIÓN DE CONTACTO Y ROL</h3>
 
@@ -323,7 +338,7 @@ export const Register = () => {
 
 
             <div className="progress">
-              <div className="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0"
+              <div className="progress-bar" role="progressbar" style={{ width: "0%" }} aria-valuenow="0"
                 aria-valuemin="0" aria-valuemax="100"></div>
             </div>
 
@@ -331,6 +346,8 @@ export const Register = () => {
 
         </form>
       </main >
+
+      <Footer />
 
     </>
   )

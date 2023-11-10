@@ -2,6 +2,7 @@ import dayjs from "dayjs";
 import { useEffect, useState } from "react";
 
 export const Posteos = ({ selectedRubro }) => {
+    
     const [posts, setPosts] = useState([]);
 
     const fetchPosts = async () => {
